@@ -35,10 +35,8 @@ pipeline {
         stage('Run Flask Container') {
             steps {
                 script {
-                    // Stop & remove existing container if running
                     sh 'docker rm -f flaskapp || true'
-                    // Run new container mapping host port 8080 to container port 8080
-                    sh 'docker run -d --name flaskapp -p 8080:8080 ${DOCKER_IMAGE}'
+                    sh 'docker run -d --name flaskapp -p 8080:5000 ${DOCKER_IMAGE}'
                 }
             }
         }
