@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git credentialsId: 'dockerhub-ssc-v3', url: 'https://github.com/vigneshgopal004/dev_project.git'
+                git branch: 'main', credentialsId: 'dockerhub-ssc-v3', url: 'https://github.com/vigneshgopal004/dev_project.git'
+
             }
         }
 
